@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<script type="text/javascript" src="JS/jquery-1.11.3.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<script src="angular/angular.min.js"></script>
+		<script src="angular/angular-route.js"></script>
+		<script src="angular/angular-mocks.js"></script>
+		<script type="text/javascript" src="app/loginApp.js"></script>
+		<script type="text/javascript" src="JS/TrackerSiteJS.js"></script>
+		<link rel="stylesheet" type="text/css" href="CSS/TrackerSiteCSS.css">
+		
+	</head>
+	<body>
+		
+		<header>
+        <% include ../partials/header %>
+    </header>
+		<script type="text/javascript" src="JS/TweenLite.min.js"></script>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 margin">
+					
+				</div>
+			</div>
+			<div class="row vertical-offset-100">
+				<div class="col-md-4 col-md-offset-4">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Please sign in</h3>
+						</div>
+						<div class="row" ng-model="myHTML">
+<div class="col-md-12 Error">
+								<!--<span ng-show="myHTML == 'true'"> invalid ID or Password </span>-->
+
+         <% if(typeof(errorMessage) !== 'undefined') {%>
+            <span><%= errorMessage %></span>
+         <% } %>
+							</div>
+						</div>
+						<div class="panel-body">
+							
+							<form accept-charset="UTF-8" method="post" action="/login" role="form">
+								<fieldset>
+									<div class="form-group" ng-controller="loginContr">
+										<input class="form-control" placeholder="E-mail" ng-model="submitResult.email" name="name" type="email" required="true" id="username">
+
+
+
+									</div>
+									<div class="form-group">
+										<input class="form-control" placeholder="Password" ng-model="submitResult.password" name="password" type="password" value="" required="true" id="password" >
+									</div>
+									<div class="checkbox">
+										<label>
+											<input name="remember" type="checkbox" value="Remember Me"> Remember Me
+										</label>
+									</div>
+									
+									<button class="btn btn-lg btn-success btn-block" type="submit" >Login</button>
+								</fieldset>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</body>
+</html>

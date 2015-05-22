@@ -1,0 +1,14 @@
+body{
+    background: url(Images/back.png);
+	background-color: #444;
+    background: url(Images/pinlayer2.png),url(Images/pinlayer1.png),url(Images/back.png);    
+}
+
+.vertical-offset-100{
+    padding-top:100px;
+}
+
+.margin {
+
+	margin-top: 20%;
+}
